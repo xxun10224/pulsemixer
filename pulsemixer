@@ -1376,6 +1376,8 @@ class Screen():
                 bar.move(-CFG.general.step_big, side)
             elif c in CFG.keys.right_big:
                 bar.move(CFG.general.step_big, side)
+            elif c == ord('`'):
+                bar.set(0, side)
             elif c in self.DIGITS:
                 percent = int(chr(c)) * 10
                 bar.set(100 if percent == 0 else percent, side)
