@@ -34,7 +34,7 @@ Interactive controls:
  j k   ↑ ↓               Navigation
  h l   ← →               Change volume
  H L   Shift←  Shift→    Change volume by 10
- 1 2 3 .. 8 9 0          Set volume to 10%-100%
+ ` 1 2 3 .. 9 0          Set volume to 0%-100%
  m                       Mute/Unmute
  Space                   Lock/Unlock channels
  Enter                   Context menu
