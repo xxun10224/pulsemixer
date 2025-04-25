@@ -1098,6 +1098,17 @@ class Screen():
         self.server_info = None
         self.ev = threading.Event()
 
+        # focus the default output sink on init
+        self.focus_line_num = self.get_default_sink_line_num()
+
+    def get_default_sink_line_num(self):
+        self.get_data()
+        sinks = PULSE.sink_list()
+        default_sink_index = [s.index for s in sinks if s.name == self.server_info.default_sink_name][0]
+        for index, (device, channel, sink_index, stream_index) in enumerate(self.data):
+            if default_sink_index == sink_index:
+                return index
+
     def getch(self):
         # blocking getch, can be 'interrupted' by ev.set
         self.ev.wait()
