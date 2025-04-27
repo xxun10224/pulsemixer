@@ -1304,7 +1304,7 @@ class Screen():
                 if not self.submenu_show and self.change_mode_allowed and side != Bar.NONE:
                     self.selected = self.data[focus]
                     if type(self.selected[0].pa) in (PulseSinkInfo, PulseSourceInfo):
-                        self.submenu_data = ['Suspend', 'Resume', 'Set as default']
+                        self.submenu_data = ['Set as default', 'Suspend', 'Resume']
                         if self.selected[0].pa.n_ports:
                             self.submenu_data.append('Set port')
                     elif type(self.selected[0].pa) is PulseCard:
